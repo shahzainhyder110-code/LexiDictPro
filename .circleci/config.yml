@@ -12,6 +12,11 @@ jobs:
             unzip LexiDictPro.zip
             cp -r LexiDictPro/. .
       - run:
+          name: Fix Gradle Wrapper
+          command: |
+            mkdir -p gradle/wrapper
+            curl -sL "https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradle/wrapper/gradle-wrapper.jar" -o gradle/wrapper/gradle-wrapper.jar
+      - run:
           name: Build APK
           command: |
             chmod +x gradlew
