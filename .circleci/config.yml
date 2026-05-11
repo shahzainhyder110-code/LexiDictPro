@@ -14,6 +14,7 @@ jobs:
             mkdir -p gradle/wrapper
             curl -sL "https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradle/wrapper/gradle-wrapper.jar" -o gradle/wrapper/gradle-wrapper.jar
             chmod +x gradlew
+            printf 'android.useAndroidX=true\nandroid.enableJetifier=true\n' > gradle.properties
       - run:
           name: Build APK
           command: ./gradlew assembleDebug
