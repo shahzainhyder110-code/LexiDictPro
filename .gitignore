@@ -1,0 +1,29 @@
+# Gradle files
+.gradle/
+build/
+*.apk
+*.aar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+
+# Build outputs
+app/build/
+app/release/
+
+# Generated files
+.DS_Store
+*.class
+*.log
+
+# Gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.vscode/
+*.swp
+*.swo
