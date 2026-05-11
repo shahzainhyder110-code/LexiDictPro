@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Extract and Fix
           command: |
-            unzip LexiDictPro.zip
+            unzip -o LexiDictPro.zip
             cp -r LexiDictPro/. .
             mkdir -p gradle/wrapper
             curl -sL "https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradle/wrapper/gradle-wrapper.jar" -o gradle/wrapper/gradle-wrapper.jar
