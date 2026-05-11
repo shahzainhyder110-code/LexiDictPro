@@ -7,20 +7,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Extract ZIP
+          name: Extract and Fix
           command: |
             unzip LexiDictPro.zip
             cp -r LexiDictPro/. .
-      - run:
-          name: Fix Gradle Wrapper
-          command: |
             mkdir -p gradle/wrapper
             curl -sL "https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradle/wrapper/gradle-wrapper.jar" -o gradle/wrapper/gradle-wrapper.jar
+            chmod +x gradlew
       - run:
           name: Build APK
-          command: |
-            chmod +x gradlew
-            ./gradlew assembleDebug
+          command: ./gradlew assembleDebug
       - store_artifacts:
           path: app/build/outputs/apk/debug/app-debug.apk
 
